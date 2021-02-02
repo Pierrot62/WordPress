@@ -22,24 +22,23 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-md-5">
-
-            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                <?php
-                $custom_logo_id = get_theme_mod('custom_logo');
-                var_dump($custom_logo_id);
-                $image = wp_get_attachment_image_src($custom_logo_id, 'full');
-                ?>
-                <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
-            </a>
-
+    <div class="container-fluid logo">
+        <div class="col-md-12 center">
+            
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                    <?php if (has_custom_logo()) : ?>
+                        <?php the_custom_logo(); ?>
+                    <?php else : ?>
+                        <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <?php endif; ?>
+                </a>
         </div>
-        <div class="col-md-5 blog-title"><?php echo get_bloginfo('name'); ?></div>
-        <div class="col-md-5 menu"></div>
     </div>
-    <div class="header">
-        <div class="container">
+
+
+    </div>
+    <div class="header center">
+        <div class="container center">
             <nav id="navigation-principale" role="navigation"> <?php wp_nav_menu(array('theme_location' => 'menu-principal')); ?> </nav>
         </div>
     </div>

@@ -3,9 +3,25 @@ Theme Name: WOOM
 Author: PIerre COURQUIN
 Description: Theme WOOM By Pierre
 */
+*{
+    transition: 0.5s;
+}
+
+.flex {
+    display: flex;
+}
 
 .header {
     background: #377bb5;
+}
+
+.logo {
+    background-color: rgb(204, 204, 204);
+    padding: 1.5em;
+}
+
+.logo:hover{
+    opacity: 0.5;
 }
 
 a {
@@ -36,6 +52,7 @@ body {
 
 .center {
     text-align: center;
+    justify-content: center;
 }
 
 
@@ -43,4 +60,10 @@ body {
 
 .blog-header {
     display: flex;
+}
+
+/*MENU*/
+
+#navigation-principale > div > ul > li > a:hover{
+    color: red;
 }
